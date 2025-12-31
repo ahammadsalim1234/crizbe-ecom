@@ -74,7 +74,7 @@ const Home = () => {
             {
               videos[videoIndex].name === "pista" ?
                 <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#4c1e07] mb-6 leading-tight">
-                  Ahammad <span className="text-[#B4D334]">Premium</span>
+                  Ahammads <span className="text-[#B4D334]">Premium</span>
                   <br />Difference
                 </h1>
                 : <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
