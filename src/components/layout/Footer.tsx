@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import Link from 'next/link';
-import Newsletter from './Newsletter';
+import Newsletter from '../Newsletter';
 
 const Footer = () => {
     return (

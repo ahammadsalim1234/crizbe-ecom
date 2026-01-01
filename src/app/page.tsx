@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Button } from './src/components/ui/button';
-import Features from './src/components/Features';
-import FeaturedProducts from './src/components/FeaturedProducts';
-import About from './src/components/About';
-import Testimonials from './src/components/Testimonials';
+import { Button } from '@/components/ui/button';
+import Features from '@/components/Features';
+import FeaturedProducts from '@/components/FeaturedProducts';
+import About from '@/components/About';
+import Testimonials from '@/components/Testimonials';
 import Link from "next/link";
 import { video } from 'framer-motion/client';
 
@@ -18,12 +18,16 @@ import { video } from 'framer-motion/client';
 const videos = [
   {
     name: "pista",
-    video: 'https://customer-assets.emergentagent.com/job_cf2f213e-cdbf-4abe-a3ac-9a8f4d8424ad/artifacts/0aondkzn_WhatsApp%20Video%202025-12-24%20at%2008.12.29.mp4',
+    video: 'https://res.cloudinary.com/dlqmw3xcn/video/upload/v1767116524/Video_Ready_After_Packet_akklop.mp4',
 
   },
   {
     name: "almond",
-    video: 'https://res.cloudinary.com/dlqmw3xcn/video/upload/v1767116524/Video_Ready_After_Packet_akklop.mp4',
+    video: 'https://res.cloudinary.com/dlqmw3xcn/video/upload/v1767196957/Video_Ready_After_Color_Change_ufuhdr.mp4',
+  },
+  {
+    name: "al",
+    video: 'https://customer-assets.emergentagent.com/job_cf2f213e-cdbf-4abe-a3ac-9a8f4d8424ad/artifacts/0aondkzn_WhatsApp%20Video%202025-12-24%20at%2008.12.29.mp4',
   }
 ]
 console.log(videos, "videosvideos")
@@ -72,15 +76,22 @@ const Home = () => {
               be premium
             </motion.span>
             {
-              videos[videoIndex].name === "pista" ?
-                <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#4c1e07] mb-6 leading-tight">
-                  Ahammads <span className="text-[#B4D334]">Premium</span>
-                  <br />Difference
-                </h1>
-                : <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              videos[videoIndex].name === "pista" ? (
+                <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                   Taste the <span className="text-[#B4D334]">Premium</span>
                   <br />Difference
                 </h1>
+              ) : videos[videoIndex].name === "almond" ? (
+                <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffff] mb-6 leading-tight">
+                  Tayyiba <span className="text-[##683310442]">Premium</span>
+                  <br />Difference
+                </h1>
+              ) : (
+                <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffff] mb-6 leading-tight">
+                  Ahammad <span className="text-[##683310442]">Premium</span>
+                  <br />Difference
+                </h1>
+              )
             }
 
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl mx-auto">
