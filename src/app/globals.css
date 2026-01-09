@@ -95,7 +95,7 @@ body {
 
 /* Navigation scroll effect */
 .nav-scrolled {
-  background: rgba(255, 255, 255, 0.9) !important;
+  background: black;
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(74, 93, 35, 0.1);
 }
@@ -176,4 +176,15 @@ select:focus {
   align-items: center;
   justify-content: center;
   padding: 0 6px;
+}
+
+.glass-card {
+  @apply bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl overflow-hidden;
+  box-shadow: 0 4px 24px rgba(74, 93, 35, 0.08);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 12px 40px rgba(74, 93, 35, 0.15);
+  transform: translateY(-4px);
 }

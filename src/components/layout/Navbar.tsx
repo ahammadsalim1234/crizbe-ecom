@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ShoppingCart, User, Menu, X, LogOut } from 'lucide-react';
 // import { useAuth } from '../context/AuthContext';
 // import { useCart } from '../context/CartContext';
@@ -17,11 +17,15 @@ import Logo from "../../../public/logo/crizbe-logo.svg"
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
-    console.log(scrolled, "dshfkvjhbud")
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     // const { user, logout } = useAuth();
     // const { cartCount } = useCart();
     const router = useRouter();
+    const pathname = usePathname();
+    console.log(pathname, "pathname")
+    const isProductsScrolled = scrolled && pathname.startsWith("/products");
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,8 +54,8 @@ const Navbar = () => {
                             <Image
                                 src={Logo}
                                 alt="Crizbe Choco Sticks Pistachio Premium Packaging"
-                                width={180}
-                                height={180}
+                                width={140}
+                                height={140}
                                 priority // Use this if the image is in the Hero section
                             />
                         </h1>
@@ -61,21 +65,21 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-8">
                         <Link
                             href="/"
-                            className={`${scrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
+                            className={`${isProductsScrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
                             data-testid="nav-home"
                         >
                             Home
                         </Link>
                         <Link
                             href="/products"
-                            className={`${scrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
+                            className={`${isProductsScrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
                             data-testid="nav-products"
                         >
                             Products
                         </Link>
                         <Link
                             href="/contact"
-                            className={`${scrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
+                            className={`${isProductsScrolled ? "text-[#4A5D23] hover:text-[#9DC23B] transition-colors font-medium" : "text-white hover:text-[#9DC23B] transition-colors font-medium"}`}
                             data-testid="nav-contact"
                         >
                             Contact

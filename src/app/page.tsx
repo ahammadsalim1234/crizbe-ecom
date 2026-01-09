@@ -18,7 +18,7 @@ import { video } from 'framer-motion/client';
 const videos = [
   {
     name: "pista",
-    video: 'https://res.cloudinary.com/dlqmw3xcn/video/upload/v1767116524/Video_Ready_After_Packet_akklop.mp4',
+    video: 'https://res.cloudinary.com/dlqmw3xcn/video/upload/v1767723764/Product_Video_Advertisement_Generated_ruj1an.mp4',
 
   },
   {
